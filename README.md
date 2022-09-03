@@ -6,7 +6,7 @@
 - [Python](https://www.python.org/) 3.10.4
 - [Django](https://www.djangoproject.com/) 3.2
 - [Django Rest Framework](https://www.django-rest-framework.org/) 3.13.1
-- [Celery] (https://docs.celeryq.dev/en/stable/) 5.2.7
+- [Celery](https://docs.celeryq.dev/en/stable/) 5.2.7
 
 
 # Приступая к работе
