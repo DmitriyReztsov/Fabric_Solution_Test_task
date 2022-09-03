@@ -1,9 +1,8 @@
-from rest_framework import status
-from rest_framework import viewsets
+from rest_framework import status, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import MailingList, Message, DeliveryStatus
+from .models import DeliveryStatus, MailingList
 from .serializers import MailingListSerializer, MessageSerializer
 
 
@@ -14,7 +13,9 @@ def general_mailing_stat(request):
     for mailing in queryset:
         messages = {}
         for status in DeliveryStatus:
-            messages[status] = mailing.sent_message.filter(delivery_status=status).count()
+            messages[status] = mailing.sent_message.filter(
+                delivery_status=status
+            ).count()
         stat_dict[mailing.id] = messages
     return Response(data=stat_dict)
 
